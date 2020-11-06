@@ -1,0 +1,67 @@
+
+    @PostMapping(value="/subtrair")
+    public ModelAndView postSubtrair (@RequestParam String a, @RequestParam String b) {
+                
+        ModelAndView modelAndView = new ModelAndView("resultado");
+        Double aDouble = Double.valueOf(a);
+        Double bDouble = Double.valueOf(b);
+        Double resultado = aDouble-bDouble;
+        
+        String operacao = a + " - " + b + " = "+ resultado;
+
+        modelAndView.addObject("resultado", operacao);
+        return modelAndView;
+    }
+
+    @PostMapping(value="/multiplicar")
+    public ModelAndView postMultiplicar (@RequestParam String a, @RequestParam String b) {
+                
+        ModelAndView modelAndView = new ModelAndView("resultado");
+        Double aDouble = Double.valueOf(a);
+        Double bDouble = Double.valueOf(b);
+        Double resultado = aDouble*bDouble;
+        
+        String operacao = a + " x " + b + " = "+ resultado;
+
+        modelAndView.addObject("resultado", operacao);
+        return modelAndView;
+    }
+
+    @PostMapping(value="/dividir")
+    public ModelAndView postDividir (@RequestParam String a, @RequestParam String b) {
+                
+        ModelAndView modelAndView = new ModelAndView("resultado");
+        Double aDouble = Double.valueOf(a);
+        Double bDouble = Double.valueOf(b);
+        Double resultado = aDouble/bDouble;
+        
+        String operacao = a + " / " + b + " = "+ resultado;
+
+        modelAndView.addObject("resultado", operacao);
+        return modelAndView;
+    }
+    
+
+
+
+
+ <form method="POST" action="/multiplicar">
+            <label for="a">a:</label><input type="text" name="a" id="a"/>
+            <label for="b">b:</label><input type="text" name="b" id="b"/>
+            
+            <input type="submit" value="multiplicar">
+            
+        </form>
+        <form method="POST" action="/dividir">
+            <label for="a">a:</label><input type="text" name="a" id="a"/>
+            <label for="b">b:</label><input type="text" name="b" id="b"/>
+           
+            <input type="submit" value="dividir">
+            
+        </form>
+        <form method="POST" action="/subtrair">
+            <label for="a">a:</label><input type="text" name="a" id="a"/>
+            <label for="b">b:</label><input type="text" name="b" id="b"/>
+            <input type="submit" value="subtrair">
+            
+        </form>

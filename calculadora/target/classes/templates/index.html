@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device width, initial-scale=1.0">
+       
+        <title> Calculadora</title>
+
+        <style>
+            body{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                background-color: lightgrey;
+                color:rgb(66, 66, 66);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            .btn{
+                width: 100px;
+                height: 30px;
+                margin: 10px;
+                background-color: rgb(241, 178, 178);
+                border: 0px;
+                border-radius: 4px;
+                color: rgb(66, 66, 66);
+            }
+
+            .btn:hover{
+                background-color: rgb(236, 206, 206);
+                border: 0px;
+                border-radius: 4px;
+            }
+
+            
+            input{
+                border: 0px solid lightcoral;
+                border-radius: 4px;
+                margin: 10px;
+            }
+            
+
+            .calc{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1> Calculadora Básica</h1>
+        <form method="POST" action="/result">
+           
+            <label for="a">A:</label><input type="text" name="a" id="a"/>
+            <label for="b">B:</label><input type="text" name="b" id="b"/>
+            <div class="calc">
+
+                <label for="opcao_a">+</label><input class="radio" type="radio" name="operacao" value="soma" id="opcao_a"></input>
+                <label for="opcao_b">-</label><input class="radio" type="radio" name="operacao" value="subtracao" id="opcao_b"></input>
+                <label for="opcao_c">÷</label><input class="radio" type="radio" name="operacao" value="divisao" id="opcao_c"></input>
+                <label for="opcao_d">x</label><input class="radio" type="radio" name="operacao" value="multiplicacao" id="opcao_d"></input>
+            </div>
+            <button class="btn" type="submit" value="Calcular">Calcular</button>
+        
+        </form>
+        
+    </body>
+</html>
